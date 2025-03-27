@@ -24,28 +24,34 @@ const Navbar = (props) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
-                  Home
+                  {props.homeLink}
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/about">
-                  About
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/about"
+                >
+                  {props.aboutLink}
                 </Link>
               </li>
             </ul>
-          <div className="form-check form-switch">
-            <input
-              className="form-check-input"
-              type="checkbox"
-              role="switch"
-              id="flexSwitchCheckDefault"
-              style={{cursor:"pointer"}}
-              
-            />
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-              Dark Mode
-            </label>
-          </div>
+            <div className="form-check form-switch" >
+              <input
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault"
+              />
+              <label
+                className="form-check-label"
+                htmlFor="flexSwitchCheckDefault"
+                style={{cursor:"pointer"}}
+              >
+                Dark Mode
+              </label>
+            </div>
           </div>
         </div>
       </nav>

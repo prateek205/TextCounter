@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar title="TextCounter"/>
+        <Navbar title="TextCounter" homeLink="Home" aboutLink="About"/>
         <div className="container">
           <Routes>
             <Route path="/about" element=<About heading="About Us" /> />
