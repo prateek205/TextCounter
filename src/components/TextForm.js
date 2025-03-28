@@ -103,7 +103,7 @@ const TextForm = (props) => {
         <p>
           <strong>
             {
-              text.split(" ").filter((element) => {
+              text.split(/\n+/).filter((element) => {
                 return element.length !== 0;
               }).length
             }{" "}
