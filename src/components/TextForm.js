@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const TextForm = (props) => {
   const [text, setText] = useState("");
-
   const handleUpCase = () => {
     setText(text.toUpperCase());
     props.showAlert("Upper-Case!", "success");
@@ -19,9 +18,18 @@ const TextForm = (props) => {
   };
 
   const handleExtSpc = () => {
-    let newText = text.split(/[ ]+/)
-    setText(newText.join(" "))
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
     props.showAlert("Extra Space Remove!", "success");
+  };
+
+  const handleSavTxt = () => {
+    const blob = new Blob([text], { type: "text/plain" });
+    const link = document.createElement("a")
+    link.href = URL.createObjectURL(blob)
+    link.download = ".txt"
+    link.click()
+    props.showAlert("Text Saved Successfully!", "success");
   };
 
   const handleTxtClr = () => {
@@ -100,6 +108,20 @@ const TextForm = (props) => {
       >
         Remove Extra Space
       </button>
+
+      <button
+        disabled={text.length === 0}
+        type="button"
+        className="btn btn-primary mx-1 my-1"
+        onClick={handleSavTxt}
+        style={{
+          backgroundColor: props.mode === "light" ? "white" : "#1a2f32",
+          color: props.mode === "dark" ? "white" : "rgb(15 32 38)",
+        }}
+      >
+        SavedText
+      </button>
+
       <button
         disabled={text.length === 0}
         type="button"
