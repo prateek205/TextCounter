@@ -14,11 +14,14 @@ const TextForm = (props) => {
   };
 
   const handleTxtCpy = () => {
-    let text = document.getElementById("myText");
-    text.select();
     navigator.clipboard.writeText(text.value);
-    document.getSelection().removeAllRanges();
     props.showAlert("Text Copied!", "success");
+  };
+
+  const handleExtSpc = () => {
+    let newText = text.split(/[ ]+/)
+    setText(newText.join(" "))
+    props.showAlert("Extra Space Remove!", "success");
   };
 
   const handleTxtClr = () => {
@@ -89,6 +92,18 @@ const TextForm = (props) => {
         disabled={text.length === 0}
         type="button"
         className="btn btn-primary mx-1 my-1"
+        onClick={handleExtSpc}
+        style={{
+          backgroundColor: props.mode === "light" ? "white" : "#1a2f32",
+          color: props.mode === "dark" ? "white" : "rgb(15 32 38)",
+        }}
+      >
+        Remove Extra Space
+      </button>
+      <button
+        disabled={text.length === 0}
+        type="button"
+        className="btn btn-primary mx-1 my-1"
         onClick={handleTxtClr}
         style={{
           backgroundColor: props.mode === "light" ? "white" : "#1a2f32",
@@ -103,7 +118,7 @@ const TextForm = (props) => {
         <p>
           <strong>
             {
-              text.split(/\n+/).filter((element) => {
+              text.split(/\s+/).filter((element) => {
                 return element.length !== 0;
               }).length
             }{" "}
