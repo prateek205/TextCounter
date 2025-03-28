@@ -1,32 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 const About = (props) => {
-  const [myStyle, setMyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-  });
-
-  const [btn, setBtn] = useState("Enable Dark Mode")
-
-  const toggleBtn = () => {
-    if (myStyle.color === "white") {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-      });
-      setBtn("Enable Dark Mode")
-    } else {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
-      setBtn("Disable Dark Mode")
-    }
-  };
-
   return (
     <>
-      <div className="container" style={myStyle}>
+      <div
+        className="container"
+        style={{ color: props.mode === "light" ? "black" : "white" }}
+      >
         <h2>{props.heading}</h2>
         <h5 className="mt-5">
           <strong>Text Analyzer</strong>
@@ -57,11 +37,6 @@ const About = (props) => {
           This Application is easy Compatable to Browsering Software like
           Firefox, Safari, Opera, Internet Explorer
         </p>
-      </div>
-      <div className="container">
-        <button type="button" className="btn btn-primary" onClick={toggleBtn}>
-          {btn}
-        </button>
       </div>
     </>
   );

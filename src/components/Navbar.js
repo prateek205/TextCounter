@@ -45,7 +45,7 @@ const Navbar = (props) => {
               />
               <label
                 className={`form-check-label text-${
-                  props.mode === "dark" ? "light" : "dark"
+                  props.mode === "light" ? "dark" : "light"
                 }`}
                 htmlFor="flexSwitchCheckDefault"
                 style={{ cursor: "pointer" }}

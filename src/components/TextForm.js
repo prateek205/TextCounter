@@ -5,10 +5,12 @@ const TextForm = (props) => {
 
   const handleUpCase = () => {
     setText(text.toUpperCase());
+    props.showAlert("Upper-Case!", "success");
   };
 
   const handleLoCase = () => {
     setText(text.toLowerCase());
+    props.showAlert("Lower-Case!", "success");
   };
 
   const handleTxtCpy = () => {
@@ -16,10 +18,12 @@ const TextForm = (props) => {
     text.select();
     navigator.clipboard.writeText(text.value);
     document.getSelection().removeAllRanges();
+    props.showAlert("Text Copied!", "success");
   };
 
   const handleTxtClr = () => {
     setText("");
+    props.showAlert("Text Cleared!", "success");
   };
 
   const handleOnChange = (e) => {
@@ -28,48 +32,73 @@ const TextForm = (props) => {
 
   return (
     <>
-      <div className="mb-3 my-2">
-          <h2>{props.heading}</h2>
-        <textarea
-          className="form-control my-2"
-          id="myText"
-          rows="5"
-          value={text}
-          onChange={handleOnChange}
-          style={{ backgroundColor: props.mode === "dark" ? "grey" : "white" }}
-        ></textarea>
+      <div style={{ color: props.mode === "light" ? "black" : "white" }}>
+        <h2 className="mb-3">{props.heading}</h2>
+        <div className="mb-1">
+          <textarea
+            className="form-control"
+            id="myText"
+            rows="5"
+            value={text}
+            onChange={handleOnChange}
+            style={{
+              backgroundColor: props.mode === "dark" ? "#27354a" : "white",
+              color: props.mode === "light" ? "black" : "white",
+            }}
+          ></textarea>
+        </div>
       </div>
-      <div>
-        <button
-          type="button"
-          className="btn btn-primary mx-1 my-1"
-          onClick={handleUpCase}
-        >
-          UpperCase
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary mx-1 my-1"
-          onClick={handleLoCase}
-        >
-          LowerCase
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary mx-1 my-1"
-          onClick={handleTxtCpy}
-        >
-          TextCopy
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary mx-1 my-1"
-          onClick={handleTxtClr}
-        >
-          TextClear
-        </button>
-      </div>
-      <div>
+
+      <button
+        disabled={text.length === 0}
+        type="button"
+        className="btn btn-primary mx-1 my-1"
+        onClick={handleUpCase}
+        style={{
+          backgroundColor: props.mode === "light" ? "white" : "#1a2f32",
+          color: props.mode === "dark" ? "white" : "rgb(15 32 38)",
+        }}
+      >
+        UpperCase
+      </button>
+      <button
+        disabled={text.length === 0}
+        type="button"
+        className="btn btn-primary mx-1 my-1"
+        onClick={handleLoCase}
+        style={{
+          backgroundColor: props.mode === "light" ? "white" : "#1a2f32",
+          color: props.mode === "dark" ? "white" : "rgb(15 32 38)",
+        }}
+      >
+        LowerCase
+      </button>
+      <button
+        disabled={text.length === 0}
+        type="button"
+        className="btn btn-primary mx-1 my-1"
+        onClick={handleTxtCpy}
+        style={{
+          backgroundColor: props.mode === "light" ? "white" : "#1a2f32",
+          color: props.mode === "dark" ? "white" : "rgb(15 32 38)",
+        }}
+      >
+        TextCopy
+      </button>
+      <button
+        disabled={text.length === 0}
+        type="button"
+        className="btn btn-primary mx-1 my-1"
+        onClick={handleTxtClr}
+        style={{
+          backgroundColor: props.mode === "light" ? "white" : "#1a2f32",
+          color: props.mode === "dark" ? "white" : "rgb(15 32 38)",
+        }}
+      >
+        TextClear
+      </button>
+
+      <div style={{ color: props.mode === "light" ? "black" : "white" }}>
         <h2>Summary</h2>
         <p>
           <strong>
@@ -91,9 +120,9 @@ const TextForm = (props) => {
           minute for reading
         </p>
       </div>
-      <div>
-        <h2 className="pt-2">Text Preview</h2>
-        <p>{text}</p>
+      <div style={{ color: props.mode === "light" ? "black" : "white" }}>
+        <h2 className="pt-1">Text Preview</h2>
+        <p>{text.length > 0 ? text : "Nothing to Preview!"}</p>
       </div>
     </>
   );
