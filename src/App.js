@@ -9,32 +9,31 @@ import Alert from "./components/Alert";
 function App() {
   const [mode, setMode] = useState("light");
   const [showBtn, setShowBtn] = useState("Dark Mode");
-  const [alert, setAlert] = useState(null)
+  const [alert, setAlert] = useState(null);
 
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
       setShowBtn("Light Mode");
       document.body.style.backgroundColor = "#27354a";
-      showAlert("Dark Mode!", "success")
+      showAlert("Dark Mode!", "success");
     } else {
       setMode("light");
       setShowBtn("Dark Mode");
       document.body.style.backgroundColor = "white";
-      showAlert("Light Mode!", "success")
+      showAlert("Light Mode!", "success");
     }
   };
 
   const showAlert = (message, type) => {
     setAlert({
-      msg:message,
-      type:type
-    })
+      msg: message,
+      type: type,
+    });
     setTimeout(() => {
-      setAlert()
+      setAlert();
     }, 1500);
-  }
-
+  };
 
   return (
     <>
@@ -47,10 +46,11 @@ function App() {
           aboutLink="About"
           toggleMode={toggleMode}
         />
-        <Alert alert={alert}/>
+        <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
             <Route
+              exact
               path="/"
               element=<TextForm
                 heading="TextCounter | WordCounter Character Counter"
@@ -59,6 +59,7 @@ function App() {
               />
             />
             <Route
+              exact
               path="/about"
               element=<About heading="About Us" mode={mode} />
             />
