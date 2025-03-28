@@ -30,6 +30,7 @@ const TextForm = (props) => {
     link.download = ".txt"
     link.click()
     props.showAlert("Text Saved Successfully!", "success");
+    setText("")
   };
 
   const handleTxtClr = () => {
@@ -49,7 +50,7 @@ const TextForm = (props) => {
           <textarea
             className="form-control"
             id="myText"
-            rows="5"
+            rows="10"
             value={text}
             onChange={handleOnChange}
             style={{
