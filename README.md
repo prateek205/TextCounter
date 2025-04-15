@@ -126,7 +126,7 @@ export default App;
 ```
 ## 🛠️ Clone Repository
 ```
-git remote add origin https://github.com/prateek205/TextCounter.git
+git clone https://github.com/prateek205/TextCounter.git
 cd TextCounter
 ```
 ## 📦 Deployment
