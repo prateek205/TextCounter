@@ -140,7 +140,6 @@ cd TextCounter
 ├── Counter Project
 ├── public/
 │   ├── asset/
-│   │   └── image
 │   └── index.html
 ├── src/
 │   ├── Components
