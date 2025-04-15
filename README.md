@@ -26,11 +26,6 @@ This Application is design for the Text Utility in which we can modify the text 
 # 📽️ Demo
 You can see Live Demo: https://text-counter-eta.vercel.app/
 
-# 🛠️ Clone Repository
-```
-git remote add origin https://github.com/prateek205/TextCounter.git
-cd TextCounter
-```
 # 🛠️ Example of Code (React.js)
 #### 1. Index.js
 ```
@@ -128,6 +123,11 @@ function App() {
 
 export default App;
 
+```
+# 🛠️ Clone Repository
+```
+git remote add origin https://github.com/prateek205/TextCounter.git
+cd TextCounter
 ```
 # 📦 Deployment
 - Netlify
