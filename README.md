@@ -1,5 +1,5 @@
 # 🗒️ Text Counter Application
-This Application is design for the Text Utility in which we can modify the text with various features like upperCase, lowerCase, copyText, savedText, show the number of character and an words and also display the reading per minute it can also be display in `dark` and `light` mode using `toggle mode`. As it is build by HTML, CSS and JavaScript Technology with responsive.
+This Application is design for the Text Utility in which we can modify the text with various features like upperCase, lowerCase, copyText, savedText, show the number of character and an words and also display the reading per minute it can also be display in `dark` and `light` mode using `toggle mode`. As it is build by HTML, CSS and JavaScript Technology with responsive for small devices using `@mediaQuery` or `bootstrap` framework.
 
 # 🚀 Technology Used
 - HTML,
@@ -9,7 +9,7 @@ This Application is design for the Text Utility in which we can modify the text 
 
 # 💻 Features
 - Easy to use with responsive Small devices.
-- It can be toggle in Dark and Light Mode.
+- It can be `toggle` in `Dark` and `Light` Mode.
 - It can be modify in `upperCase`, `lowerCase`, `copyText`, `savedText`, `clearText` etc.
 - Display the Number of words and characters also in minute of reading.
 
