@@ -1,19 +1,19 @@
 # 🗒️ Text Counter Application
 This Application is design for the Text Utility in which we can modify the text with various features like upperCase, lowerCase, copyText, savedText, show the number of character and an words and also display the reading per minute it can also be display in `dark` and `light` mode using `toggle mode`. As it is build by HTML, CSS and JavaScript Technology with responsive for small devices using `@mediaQuery` or `bootstrap` framework.
 
-# 🚀 Technology Used
+## 🚀 Technology Used
 - HTML,
 - CSS,
 - JavaScript,
 - React.js
 
-# 💻 Features
+## 💻 Features
 - Easy to use with responsive Small devices.
 - It can be `toggle` in `Dark` and `Light` Mode.
 - It can be modify in `upperCase`, `lowerCase`, `copyText`, `savedText`, `clearText` etc.
 - Display the Number of words and characters also in minute of reading.
 
-# 📸 Screenshot
+## 📸 Screenshot
 #### 1. Light Mode
 ![Demo_Screenshot](https://github.com/prateek205/TextCounter/blob/046858234104faa44d6b693a6015c3d1ecef73e0/public/asset/images/textCounter_01.png)
 
@@ -23,10 +23,10 @@ This Application is design for the Text Utility in which we can modify the text 
 #### 3. Responsive Devices
 ![Demo_Screenshot](https://github.com/prateek205/TextCounter/blob/046858234104faa44d6b693a6015c3d1ecef73e0/public/asset/images/textCounter_03.png)
 
-# 📽️ Demo
+## 📽️ Demo
 You can see Live Demo: https://text-counter-eta.vercel.app/
 
-# 🛠️ Example of Code (React.js)
+## 🛠️ Example of Code (React.js)
 #### 1. Index.js
 ```
 import React from "react";
@@ -124,18 +124,18 @@ function App() {
 export default App;
 
 ```
-# 🛠️ Clone Repository
+## 🛠️ Clone Repository
 ```
 git remote add origin https://github.com/prateek205/TextCounter.git
 cd TextCounter
 ```
-# 📦 Deployment
+## 📦 Deployment
 - Netlify
 - Vercel
 - Render
 - Github Page
 
-# 📂 Folder Structure
+## 📂 Folder Structure
 ```
 ├── Counter Project
 ├── public/
